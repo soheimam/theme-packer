@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuration | Theme Packer</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/theme-packer/assets/css/0.styles.a47016f3.css" as="style"><link rel="preload" href="/theme-packer/assets/js/app.7a55c1b5.js" as="script"><link rel="preload" href="/theme-packer/assets/js/2.9f08d837.js" as="script"><link rel="preload" href="/theme-packer/assets/js/9.a1ed2303.js" as="script"><link rel="prefetch" href="/theme-packer/assets/js/10.267e5dfb.js"><link rel="prefetch" href="/theme-packer/assets/js/3.46424c8f.js"><link rel="prefetch" href="/theme-packer/assets/js/4.c8bea343.js"><link rel="prefetch" href="/theme-packer/assets/js/5.c7a29121.js"><link rel="prefetch" href="/theme-packer/assets/js/6.b4325088.js"><link rel="prefetch" href="/theme-packer/assets/js/7.dc434fcd.js"><link rel="prefetch" href="/theme-packer/assets/js/8.e66b1c9f.js">
+    <link rel="stylesheet" href="/theme-packer/assets/css/0.styles.a47016f3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/theme-packer/" class="home-link router-link-active"><!----> <span class="site-name">Theme Packer</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/davidwarrington/theme-packer" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/davidwarrington/theme-packer" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/theme-packer/" aria-current="page" class="sidebar-link">Getting Started</a></li><li><a href="/theme-packer/guide/" class="sidebar-link">Guide</a></li><li><a href="/theme-packer/configuration/" aria-current="page" class="active sidebar-link">Configuration</a></li><li><a href="/theme-packer/concepts/" class="sidebar-link">Concepts</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="configuration"><a href="#configuration" class="header-anchor">#</a> Configuration</h1> <p>Theme Packer is designed to be extendable. Want to use Vue on your store? You can add it to your config. Want to add a bunch of PostCSS plugins? You can do that too.</p> <p>We purposely expose most config files in your project root directory, so, if for example you'd like to use TailwindCSS, you can add it via <code>postcss.config.js</code> in your project root.</p> <p>The webpack config isn't exposed directly to you. The reason for this is that it's a long and complex config. If you wish to change it at all, you can do so with the <code>'webpack.extend'</code> config option. For example, if you want to use svgo-loader to optimise your SVGs, you might do the following:</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'webpack.extend'</span><span class="token operator">:</span> <span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            module<span class="token operator">:</span> <span class="token punctuation">{</span>
+                rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.svg$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+                        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+                            <span class="token string">'file-loader'</span><span class="token punctuation">,</span>
+                            <span class="token string">'svgo-loader'</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Theme Packer uses <a href="https://github.com/survivejs/webpack-merge" target="_blank" rel="noopener noreferrer">webpack-merge<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> behind the scenes to merge the config you provide with the pre-existing config. This means that you don't need to completely rewrite the config in order to add the plugins or loaders you require.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/theme-packer/guide/" class="prev">
+        Guide
+      </a></span> <span class="next"><a href="/theme-packer/concepts/">
+        Concepts
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/theme-packer/assets/js/app.7a55c1b5.js" defer></script><script src="/theme-packer/assets/js/2.9f08d837.js" defer></script><script src="/theme-packer/assets/js/9.a1ed2303.js" defer></script>
+  </body>
+</html>
