@@ -6,3 +6,4 @@ module.exports = ({ mode }) => {
 
     return { plugins };
 };
+
